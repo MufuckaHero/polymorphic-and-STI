@@ -1,0 +1,13 @@
+= simple_form_for @event, html: { multipart: true } do |f| 
+  = if @event.errors.any? 
+    #errors
+    %h3
+      = "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
+    %ul
+      - @event.errors.full_messages.each do |msg|
+        %li= msg  
+  .form-group
+    = f.input :title, input_html: {class: 'form_control'}
+  .form-group
+    = f.input :address, input_html: {class: 'form_control'}
+  = f.button :submit, class: 'btn btn-primary' 

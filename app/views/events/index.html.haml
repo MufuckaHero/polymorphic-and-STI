@@ -1,0 +1,8 @@
+#events.transitions-enabled
+  - @events.each do |event| 
+    .box.panel.panel-default
+      %h2= link_to event.title, event_path(event) 
+      .panel-footer
+        .row
+          = event.created_at.strftime("%B %d, %Y")
+  %br

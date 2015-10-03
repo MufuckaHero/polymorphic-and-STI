@@ -1,0 +1,14 @@
+#video_show.row
+  .col-md-8.col-md-offset-2
+    .panel.panel-default
+      .panel-body
+        %h1= @video.title 
+        %p= @video.description 
+      .panel-footer
+        .row
+          .col-md-6
+            = @video.created_at.strftime("%B %d, %Y")
+          .col-md-6
+            .btn-group.pull-right 
+              = link_to 'Edit', edit_video_path(@video), class: "btn btn-default"
+              = link_to 'Destroy', video_path(@video), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"

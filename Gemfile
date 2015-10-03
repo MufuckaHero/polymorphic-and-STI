@@ -17,6 +17,7 @@ gem 'haml-rails'
 gem 'simple_form'
 gem 'aws-sdk-v1'
 gem 'slim'
+gem 'masonry-rails', '~> 0.2.4'
 
 group :development do
 	gem 'spring'

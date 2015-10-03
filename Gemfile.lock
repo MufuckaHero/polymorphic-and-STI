@@ -89,6 +89,8 @@ GEM
     json (1.8.3)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    masonry-rails (0.2.4)
+      railties
     mime-types (2.6.2)
     mini_portile (0.6.2)
     minitest (5.8.1)
@@ -196,6 +198,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  masonry-rails (~> 0.2.4)
   pg
   puma
   rails (= 4.1.8)
