@@ -98,6 +98,15 @@ nav {
 	}
 }
 
+#welcome {
+  .panel-heading {
+    background-image: none;
+    background-color: red;
+    color: white;
+
+  }
+}
+
 #edit_page {
 	.current_image {
 		img {
@@ -135,9 +144,6 @@ nav {
 		p {
 			margin: 0;
 		}
-		.user {
-			padding-top: 8px;
-		}
 	}
 }
 
@@ -169,9 +175,6 @@ nav {
 		p {
 			margin: 0;
 		}
-		.user {
-			padding-top: 8px;
-		}
 	}
 }
 
@@ -202,9 +205,6 @@ nav {
 		padding: 20px 35px;
 		p {
 			margin: 0;
-		}
-		.user {
-			padding-top: 8px;
 		}
 	}
 }
