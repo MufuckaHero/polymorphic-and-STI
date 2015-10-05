@@ -16,7 +16,7 @@ class VideosController < ApplicationController
 	end
 
 	def create
-		@video = Video.create(ppost_params)
+		@video = Video.create(video_params)
 
 		if @video.save
       redirect_to @video
@@ -43,7 +43,7 @@ class VideosController < ApplicationController
 	end
 
 	private
-  def post_params
+  def video_params
     params.require(:video).permit(:title, :description)
   end
 end

@@ -46,8 +46,13 @@ class CommentsController < ApplicationController
   
   private
   def find_target
-    klass, id = request.path.split('/')[1, 2]
-    @target = klass.classify.constantize.find(id)
+  	if params[:post_id] || params[:video_id] 
+  		klass = params[:post_id] ? Post : Video
+  	else
+  	  klass = Event
+  	end
+  	par = (klass.to_s.downcase + "_id").to_sym
+    @target = klass.find(params[par])
   end 
 
   def comment_params
