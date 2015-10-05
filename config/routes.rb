@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
 
   resources :posts do
-    resources :comments, only: [:index, :new, :create]
+    resources :comments, only: [:index, :new, :create, :destroy]
   end
 
   resources :events do
-    resources :comments, only: [:index, :new, :create]
+    resources :comments, only: [:index, :new, :create, :destroy]
   end
 
   resources :videos do
-    resources :comments, only: [:index, :new, :create]
+    resources :comments, only: [:index, :new, :create, :destroy]
   end
 
-  resources :comments, only: [:show, :edit, :update, :destroy]
+  resources :comments, only: [:show, :edit, :update]
 
   resources :welcome, only: [:index]
 

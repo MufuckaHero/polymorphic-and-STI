@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  validates :authjr_name, presence: true,
+  validates :author_name, presence: true,
                           length: { minimum: 2 }
 
 

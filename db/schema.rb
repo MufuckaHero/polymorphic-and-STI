@@ -17,11 +17,13 @@ ActiveRecord::Schema.define(version: 20151002145058) do
     t.string   "author_name"
     t.string   "author_email"
     t.text     "content"
-    t.integer  "target_id",    null: false
-    t.string   "target_type",  null: false
+    t.integer  "target_id"
+    t.string   "target_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  add_index "comments", ["target_id", "target_type"], name: "index_comments_on_target_id_and_target_type"
 
   create_table "events", force: true do |t|
     t.string   "title"

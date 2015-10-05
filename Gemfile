@@ -20,7 +20,7 @@ gem 'slim'
 gem 'masonry-rails', '~> 0.2.4'
 
 group :development do
-	gem 'spring'
+  gem 'spring'
   gem 'sqlite3'         
 end
 

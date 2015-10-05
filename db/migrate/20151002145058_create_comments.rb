@@ -4,8 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.string   :author_name
       t.string   :author_email
       t.text     :content
-      t.integer  :target_id, null: false
-      t.string   :target_type, null: false
+      t.references :target, polymorphic: true, index: true
 
       t.timestamps null: false
     end
