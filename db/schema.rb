@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151002145058) do
+ActiveRecord::Schema.define(version: 20151005191852) do
+
+  create_table "assets", force: true do |t|
+    t.string   "filename"
+    t.string   "content_type"
+    t.string   "type"
+    t.integer  "assetable_id"
+    t.string   "assetable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "comments", force: true do |t|
     t.string   "author_name"

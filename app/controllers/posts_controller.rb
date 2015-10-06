@@ -1,15 +1,16 @@
 class PostsController < ApplicationController
 	def index
-		@posts = Post.all
+		@posts = Post.order("created_at DESC")
 	end
 
 	def show
-		@post = Post.find(params[:id])		
-		@comments = @post.comments
+		@post = Post.find(params[:id])	
+	  @comments = @post.comments.all
 	end
 
 	def new
 		@post = Post.new
+		@post.build_picture
 	end
 
 	def edit
@@ -45,6 +46,6 @@ class PostsController < ApplicationController
 
 	private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, picture_attributes: [:data])
   end
 end

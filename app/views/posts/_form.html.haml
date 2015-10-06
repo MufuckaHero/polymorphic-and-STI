@@ -7,7 +7,15 @@
       - @post.errors.full_messages.each do |msg|
         %li= msg  
   .form-group
+    = f.simple_fields_for :picture do |p| 
+      = p.label :picture
+      = p.file_field :data
+  .form-group
     = f.input :title, input_html: {class: 'form_control'}
   .form-group
     = f.input :content, input_html: {class: 'form_control'}
   = f.button :submit, class: 'btn btn-primary' 
+
+    
+           
+           

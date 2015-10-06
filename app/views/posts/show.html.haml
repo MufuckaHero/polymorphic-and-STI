@@ -1,6 +1,8 @@
 #post_show.row
   .col-md-8.col-md-offset-2
     .panel.panel-default
+      .panel-heading.post_image
+        = image_tag @post.picture.data_url if @post.picture
       .panel-body
         %h1= @post.title 
         %p= @post.content 
@@ -17,4 +19,5 @@
     %br
       = render 'comments/index'
 
-   
+    
+

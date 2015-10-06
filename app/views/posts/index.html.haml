@@ -1,8 +1,9 @@
 #posts.transitions-enabled
   - @posts.each do |post| 
     .box.panel.panel-default
-      .panel-body
-        %h2= link_to post.title, post_path(post) 
+      - if post.picture
+        = link_to (image_tag post.picture.data_url), post
+      %h2= link_to post.title, post_path(post) 
       .panel-footer
         .row
           = post.created_at.strftime("%B %d, %Y")
