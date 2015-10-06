@@ -5,6 +5,13 @@
         %h1 New Comment
       .panel-body
         = simple_form_for([@target, @comment]) do |f| 
+          = if @comment.errors.any? 
+            #errors
+            %h3
+              = "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
+            %ul
+              - @comment.errors.full_messages.each do |msg|
+                %li= msg  
           .form-group
             = f.input :author_name, input_html: {class: 'form_control'}
           .form-group

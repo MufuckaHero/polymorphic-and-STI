@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     @comment = @target.comments.create(comment_params)
 
     if @comment.save
-      redirect_to @target
+      redirect_to @target, notice: "Successfully saved"
     else
       render 'new'
     end
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
 		@comment = Comment.find(params[:id])
 
 		if @comment.update(comment_params)
-      redirect_to @comment
+      redirect_to @comment, notice: "Comment was successfully updated"
     else
       render 'edit'
     end

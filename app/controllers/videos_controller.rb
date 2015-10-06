@@ -19,7 +19,7 @@ class VideosController < ApplicationController
 		@video = Video.create(video_params)
 
 		if @video.save
-      redirect_to @video
+      redirect_to @video, notice: "Successfully saved"
     else
       render 'new'
     end
@@ -29,7 +29,7 @@ class VideosController < ApplicationController
 		@video = Video.find(params[:id])
 
 		if @video.update(post_params)
-      redirect_to @video
+      redirect_to @video, notice: "Video was successfully updated"
     else
       render 'edit'
     end

@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 		@event = Event.create(event_params)
 
 		if @event.save
-      redirect_to @event
+      redirect_to @event, notice: "Successfully saved"
     else
       render 'new'
     end
@@ -29,7 +29,7 @@ class EventsController < ApplicationController
 		@event = Event.find(params[:id])
 
 		if @event.update(event_params)
-      redirect_to @event
+      redirect_to @event, notice: "Event was successfully updated"
     else
       render 'edit'
     end
