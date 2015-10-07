@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'aws-sdk-v1'
 gem 'slim'
 gem 'masonry-rails', '~> 0.2.4'
+gem 'select2-rails'
 
 group :development do
   gem 'spring'
