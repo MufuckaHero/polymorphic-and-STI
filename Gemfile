@@ -25,7 +25,7 @@ gem 'bootstrap-kaminari-views'
 gem 'rails_12factor', group: :production
 
 group :development, :test do 
-  gem 'populator', :require => false
+  gem 'populator'
   gem 'spring'
 	gem 'rspec-rails'
   gem 'annotate'
