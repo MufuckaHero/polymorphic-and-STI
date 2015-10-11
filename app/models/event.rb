@@ -3,4 +3,7 @@ class Event < ActiveRecord::Base
                     length: { minimum: 2 }
 
   has_many :comments, as: :target, dependent: :delete_all
+
+  has_one :attachment, as: :assetable,  dependent: :destroy
+  accepts_nested_attributes_for :attachment
 end

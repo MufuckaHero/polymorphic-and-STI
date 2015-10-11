@@ -8,13 +8,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :new, :create, :destroy]
   end
 
-  resources :videos do
-    resources :comments, only: [:index, :new, :create, :destroy]
-  end
-
   resources :comments, only: [:show, :edit, :update]
 
-  resources :tags, only: [:show]
+  resources :tags
 
   resources :welcome, only: [:index]
 

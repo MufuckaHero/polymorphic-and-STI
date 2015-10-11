@@ -1,9 +1,0 @@
-#videos.transitions-enabled
-  - @videos.each do |video| 
-    .box.panel.panel-default
-      .panel-body
-        %h2= link_to video.title, video_path(video) 
-      .panel-footer
-        .row
-          = video.created_at.strftime("%B %d, %Y")
-  %br

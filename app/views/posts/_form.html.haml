@@ -1,4 +1,4 @@
-= simple_form_for @post, html: { multipart: true } do |f| 
+= simple_form_for @post, multipart: true do |f| 
   = if @post.errors.any? 
     #errors
     %h3
@@ -8,14 +8,12 @@
         %li= msg  
   .form-group
     = f.simple_fields_for :picture do |p| 
-      = p.label :picture
-      = p.file_field :data
+      = p.input :data, label: "Picture"
   .form-group
-    = f.input :title, input_html: {class: 'form_control'}
+    = f.input :title
   .form-group
-    = f.input :content, input_html: {class: 'form_control'}
-  = f.button :submit, class: 'btn btn-primary' 
-
-    
-           
-           
+    = f.input :content
+  .form-group
+    = f.label :tags
+    = select_tag(:tag_ids,options_from_collection_for_select(@tags || [], :id, :slug), multiple: true, class: 'form-control')
+  = f.button :submit, class: 'btn btn-default' 

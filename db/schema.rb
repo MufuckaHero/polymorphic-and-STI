@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007013908) do
+ActiveRecord::Schema.define(version: 20151010022756) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "assets", force: true do |t|
     t.string   "filename"
@@ -33,24 +36,70 @@ ActiveRecord::Schema.define(version: 20151007013908) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "comments", ["target_id", "target_type"], name: "index_comments_on_target_id_and_target_type"
+  add_index "comments", ["target_id", "target_type"], name: "index_comments_on_target_id_and_target_type", using: :btree
+
+  create_table "dm_models_headers", force: true do |t|
+    t.string  "name",      limit: 50
+    t.string  "value",     limit: 50
+    t.integer "report_id"
+  end
+
+  create_table "dm_models_links", force: true do |t|
+    t.string  "name",      limit: 50
+    t.string  "href",      limit: 50
+    t.string  "rel",       limit: 50
+    t.string  "target",    limit: 50
+    t.integer "report_id"
+  end
+
+  create_table "dm_models_reports", force: true do |t|
+    t.string   "url",  limit: 50
+    t.datetime "time"
+    t.string   "ip",   limit: 39
+  end
 
   create_table "events", force: true do |t|
     t.string   "title"
     t.text     "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "tag_ids",    default: [],              array: true
+  end
+
+  add_index "events", ["tag_ids"], name: "index_events_on_tag_ids", using: :gin
+
+  create_table "headers", id: false, force: true do |t|
+    t.integer "id",        default: "nextval('headers_id_seq'::regclass)", null: false
+    t.text    "key"
+    t.text    "value"
+    t.integer "report_id"
+  end
+
+  create_table "links", id: false, force: true do |t|
+    t.integer "id",                   default: "nextval('links_id_seq'::regclass)", null: false
+    t.text    "name"
+    t.text    "href"
+    t.text    "rel"
+    t.string  "target",    limit: 15
+    t.integer "report_id"
   end
 
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "tag_ids",    default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "tag_ids",    default: [],              array: true
   end
 
-  add_index "posts", ["tag_ids"], name: "index_posts_on_tag_ids"
+  add_index "posts", ["tag_ids"], name: "index_posts_on_tag_ids", using: :gin
+
+  create_table "reports", id: false, force: true do |t|
+    t.integer "id",   default: "nextval('reports_id_seq'::regclass)", null: false
+    t.text    "url"
+    t.text    "time"
+    t.text    "ip"
+  end
 
   create_table "tags", force: true do |t|
     t.string   "name"

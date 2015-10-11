@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :video do
+  factory :content_view do
     
   end
 

@@ -9,9 +9,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',  group: :doc
 gem 'pg'
+gem 'puma'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass' 
-gem 'puma'
 gem 'carrierwave'
 gem 'haml-rails'
 gem 'simple_form'
@@ -19,13 +19,10 @@ gem 'aws-sdk-v1'
 gem 'slim'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'select2-rails'
-
-group :development do
-  gem 'spring'
-  gem 'sqlite3'         
-end
+gem 'kaminari'
 
 group :development, :test do 
+  gem 'spring'
 	gem 'rspec-rails'
 	gem 'database_cleaner'
 	gem 'factory_girl_rails'

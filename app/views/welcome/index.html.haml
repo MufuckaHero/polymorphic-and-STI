@@ -1,47 +1,28 @@
-.row
-  .panel.panel-default
-    .panel-heading
-      %h4= link_to "All Posts", posts_path
-    .panel-body
-      #posts.transitions-enabled
-        - @posts.each do |post| 
-          .box.panel.panel-default     
-            %h2= link_to post.title, post_path(post) 
-            .panel-footer
-              .row
-                = post.created_at.strftime("%B %d, %Y")
-        %br
-    .panel-footer
-      %h5=link_to "New Post", new_post_path
+.col-md-3
+  %h1= link_to "All Posts", posts_path
+  %h3= link_to "New Post", new_post_path  
+#posts.transitions-enabled
+  .col-md-8
+    - @posts.each do |post| 
+      .box.panel.panel-default  
+        - if post.picture
+          = link_to (image_tag post.picture.data_url), post 
+        %h2= link_to post.title, post_path(post) 
+        .panel-footer
+          .row
+            = post.created_at.strftime("%B %d, %Y")
+    %br
+
 %br
-.row
-  .panel.panel-default
-    .panel-heading
-      %h4= link_to "Events", events_path
-    .panel-body
-      #events.transitions-enabled
-        - @events.each do |event| 
-          .box.panel.panel-default
-            %h2= link_to event.title, event_path(event)
-            .panel-footer
-              .row
-                = event.created_at.strftime("%B %d, %Y")
-        %br
-    .panel-footer
-      %h5=link_to "New Event", new_event_path
-%br
-.row
-  .panel.panel-default
-    .panel-heading
-      %h4= link_to "Videos", videos_path
-    .panel-body
-      #videos.transitions-enabled
-        - @videos.each do |video| 
-          .box.panel.panel-default
-            %h2= link_to video.title, video_path(video)
-            .panel-footer
-              .row
-                = video.created_at.strftime("%B %d, %Y")
-        %br
-    .panel-footer
-      %h5=link_to "New Video", new_video_path
+.col-md-3
+  %h1= link_to "All Events", events_path
+  %h3= link_to "New Event", new_event_path
+#events.transitions-enabled
+  .col-md-6
+    - @events.each do |event| 
+      .box.panel.panel-default
+        %h2= link_to event.title, event_path(event)
+        .panel-footer
+          .row
+            = event.created_at.strftime("%B %d, %Y")
+    %br

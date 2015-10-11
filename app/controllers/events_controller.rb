@@ -1,50 +1,63 @@
 class EventsController < ApplicationController
-	def index
-		@events = Event.order("created_at DESC")
-	end
+  before_action :tags_all, only: [:new, :edit]
 
-	def show
-		@event = Event.find(params[:id])
-	end
+  def index
+    @events = Event.order("created_at DESC")
+  end
 
-	def new
-		@event = Event.new
-	end
+  def show
+    @event = Event.find(params[:id])
+    @comments = @event.comments.all
+    @event_tags = Tag.where(id: @event.tag_ids)
+  end
 
-	def edit
-		@event = Event.find(params[:id])
-	end
+  def new
+    @event = Event.new
+    @event.build_attachment
+  end
 
-	def create
-		@event = Event.create(event_params)
+  def edit
+    @event = Event.find(params[:id])
+    unless @event.attachment
+      @event.build_attachment
+    end
+  end
 
-		if @event.save
+  def create
+    @event = Event.create(event_params)
+    @event.tag_ids = params[:tag_ids]
+
+    if @event.save
       redirect_to @event, notice: "Successfully saved"
     else
       render 'new'
     end
-	end
+  end
 
-	def update
-		@event = Event.find(params[:id])
+  def update
+    @event = Event.find(params[:id])
+    @event.tag_ids = params[:tag_ids]
 
-		if @event.update(event_params)
+    if @event.update(event_params)
       redirect_to @event, notice: "Event was successfully updated"
     else
       render 'edit'
     end
-	end
+  end
 
-	def destroy
-	  @event = Event.find(params[:id])
+  def destroy
+    @event = Event.find(params[:id])
     @event.destroy
- 
-    redirect_to events_path
-	end
 
-	private
+    redirect_to events_path
+  end
+
+  private
+  def tags_all
+    @tags = Tag.all
+  end
+
   def event_params
-    params.require(:event).permit(:title, :address)
+    params.require(:event).permit(:title, :address, attachment_attributes: [:data])
   end
 end
-

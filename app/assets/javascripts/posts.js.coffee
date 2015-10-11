@@ -6,3 +6,5 @@ $ ->
     $('#posts').masonry
       itemSelector: '.box'
       isFitWidth: true
+$ ->
+  $("#tag_ids").select2({ tags: true, theme: "bootstrap" }); 

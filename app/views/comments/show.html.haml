@@ -1,11 +1,12 @@
-.row
-  .col-md-6
-    %p
-      = @comment.author_email   
-    %p
-      = @comment.content
-  .col-md-6
-    .btn-group.pull-right
-      = link_to 'Edit', edit_comment_path(@comment), class: "btn btn-default"
-      = link_to 'Destroy', [@comment.target, @comment] , method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"
-%br    
+.col-md-8.col-md-offset-2
+  .panel.panel-default
+    .panel-body
+      %h3= @comment.author_name
+      %h5= @comment.author_email   
+      %h3=  @comment.content
+    .panel-footer
+      .row
+        .col-md-6
+          .btn-group.pull-right 
+            = link_to 'Edit', edit_comment_path(@comment), class: "btn btn-default"
+            = link_to 'Destroy', [@comment.target, @comment] , method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"
