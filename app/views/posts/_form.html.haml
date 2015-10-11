@@ -15,5 +15,5 @@
     = f.input :content
   .form-group
     = f.label :tags
-    = select_tag(:tag_ids,options_from_collection_for_select(@tags || [], :id, :slug), multiple: true, class: 'form-control')
+    = select_tag(:tag_ids,options_from_collection_for_select(@tags || [], :id, :name, :slug), multiple: true, class: 'form-control')
   = f.button :submit, class: 'btn btn-default' 

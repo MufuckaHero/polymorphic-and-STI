@@ -1,4 +1,8 @@
-%h2= @tag.name
-
-.articles
-  = render @articles
+.col-md-8.col-md-offset-2
+  .panel.panel-default
+    .panel-body
+      %h3= @tag.name
+    .panel-footer
+      %h4 Belonges To:
+      .row
+        = render @articles

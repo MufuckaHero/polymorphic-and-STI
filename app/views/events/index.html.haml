@@ -7,3 +7,5 @@
         .row
           = event.created_at.strftime("%B %d, %Y")
   %br
+= paginate @events, :theme => 'twitter-bootstrap',
+                   :pagination_class => "pager"

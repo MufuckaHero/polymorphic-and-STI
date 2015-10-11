@@ -8,3 +8,5 @@
         .row
           = post.created_at.strftime("%B %d, %Y")
   %br
+= paginate @posts, :theme => 'twitter-bootstrap',
+                   :pagination_class => "pager"

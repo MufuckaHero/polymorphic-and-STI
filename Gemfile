@@ -20,10 +20,13 @@ gem 'slim'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'select2-rails'
 gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 group :development, :test do 
   gem 'spring'
 	gem 'rspec-rails'
+  gem 'populator'
+  gem 'annotate'
 	gem 'database_cleaner'
 	gem 'factory_girl_rails'
 	gem 'fakeweb'

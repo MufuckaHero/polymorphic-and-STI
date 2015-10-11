@@ -1,5 +1,7 @@
 class Tag < ActiveRecord::Base
+  validates :name, presence: true, uniqueness: true
+
   def to_param
-    slug
+    name
   end
 end

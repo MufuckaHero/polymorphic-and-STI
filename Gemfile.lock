@@ -27,6 +27,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    annotate (2.6.10)
+      activerecord (>= 3.2, <= 4.3)
+      rake (~> 10.4)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (6.0.3)
       execjs
@@ -34,6 +37,9 @@ GEM
     aws-sdk-v1 (1.66.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bootstrap-sass (3.3.5)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -101,6 +107,7 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.3)
+    populator (1.0.0)
     puma (2.14.0)
     rack (1.5.5)
     rack-test (0.6.3)
@@ -190,7 +197,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   aws-sdk-v1
+  bootstrap-kaminari-views
   bootstrap-sass
   carrierwave
   coffee-rails (~> 4.0.0)
@@ -205,6 +214,7 @@ DEPENDENCIES
   kaminari
   masonry-rails (~> 0.2.4)
   pg
+  populator
   puma
   rails (= 4.1.8)
   rspec-rails

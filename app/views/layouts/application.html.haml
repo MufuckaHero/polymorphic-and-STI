@@ -12,6 +12,7 @@
       %ul.nav.navbar-nav.navbar-right
         %li= link_to "Posts", posts_path
         %li= link_to "Events", events_path
+        %li= link_to "Create Tag", new_tag_path
   .container
     - flash.each do |name, msg|
       =content_tag :div, msg, class: 'alert alert-info'     

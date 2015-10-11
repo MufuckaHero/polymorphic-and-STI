@@ -9,4 +9,6 @@ class Post < ActiveRecord::Base
   
   has_one :picture, as: :assetable,  dependent: :destroy
   accepts_nested_attributes_for :picture
+
+  paginates_per 10
 end

@@ -12,11 +12,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 100;
-	a {
-	  color: #bbb;
-	}
-	font-family: "Greta Text Light", "times new roman", "georgia";
+  color: #bbb;
+  font-weight: 100;
+  a {
+    color: #bbb;
+  }
+  font-family: "Greta Text Light", "times new roman", "georgia";
 }
 
 nav {
@@ -35,6 +36,17 @@ nav {
   }
 }
 
+#tag_cloud {
+  width: 400px;
+  line-height: 2em;
+  word-spacing: 8px; 
+  .s { font-size: 1.2em; }
+  .m { font-size: 1.8em; }
+  .l { font-size: 2.2em; }
+  a {
+	  color: #474747;
+  }
+}
 
 #posts {
   margin: 0 auto;
@@ -85,6 +97,14 @@ nav {
 }
 
 .panel {
+  h1, h3, h4, h5, h6 {
+    color: #868686;
+	  font-weight: 100;
+    a {
+	    color: #474747;
+    }
+	  font-family: "Greta Text Light", "times new roman", "georgia";
+	}
   .panel-heading {
     background-image: none;
     background-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
@@ -99,10 +119,15 @@ nav {
 		}
   }
  .panel-footer {
+    h1, h3, h4, h5, h6 {
+    color: #474747;
+	  font-weight: 100;
+	  font-family: "Greta Text Light", "times new roman", "georgia";
+	  }
 	background-image: none;
 	  background-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 	  a {
-			color: grey;
+			color: #474747;
 			font-weight: bold;
 			&:hover {
 				text-decoration: none;
@@ -150,6 +175,14 @@ nav {
 			margin: 0;
 		}
 	}
+  h1, h3, h4, h5, h6 {
+    color: #474747;
+	  font-weight: 100;
+    a {
+	     color: #474747;
+    }
+	  font-family: "Greta Text Light", "times new roman", "georgia";
+	}
 }
 
 #event_show {
@@ -181,6 +214,14 @@ nav {
 			margin: 0;
 		}
 	}
+  h1, h3, h4, h5, h6 {
+    color: #474747;
+    font-weight: 100;
+	  a {
+      color: #474747;
+   	}
+    font-family: "Greta Text Light", "times new roman", "georgia";
+  }
 }
 
 textarea {

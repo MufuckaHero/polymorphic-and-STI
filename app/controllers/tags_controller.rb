@@ -1,10 +1,6 @@
 class TagsController < ApplicationController
   before_action :find_tag, only: [:show]
 
-  def index
-    @tags = Tag.all
-  end
-
   def new
     @tag = Tag.new
   end
@@ -17,7 +13,7 @@ class TagsController < ApplicationController
     @tag = Tag.create(tag_params)
 
     if @tag.save
-      redirect_to @tag, notice: "Tag Saved"
+      redirect_to :root, notice: "Tag Saved"
     else 
       render 'new'
     end
@@ -25,7 +21,7 @@ class TagsController < ApplicationController
 
   protected
   def find_tag
-    @tag = Tag.where(slug: params[:id]).first
+    @tag = Tag.where(name: params[:id]).first
   end
 
   private

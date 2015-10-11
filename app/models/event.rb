@@ -6,4 +6,6 @@ class Event < ActiveRecord::Base
 
   has_one :attachment, as: :assetable,  dependent: :destroy
   accepts_nested_attributes_for :attachment
+
+  paginates_per 10
 end

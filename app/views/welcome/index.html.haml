@@ -2,7 +2,7 @@
   %h1= link_to "All Posts", posts_path
   %h3= link_to "New Post", new_post_path  
 #posts.transitions-enabled
-  .col-md-8
+  .col-md-6
     - @posts.each do |post| 
       .box.panel.panel-default  
         - if post.picture
@@ -26,3 +26,11 @@
           .row
             = event.created_at.strftime("%B %d, %Y")
     %br
+
+%h1 Tags cloud
+%h3= link_to "Create Tag", new_tag_path
+.row
+  .col-md-6.col-md-offset-3
+    #tag_cloud
+      - @articles.each do |article|
+        = link_to article[:tag].name, tag_path(article[:tag]), class: "#{article[:css_class]}"

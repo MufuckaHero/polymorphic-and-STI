@@ -19,7 +19,7 @@
           .col-md-6
             -@post_tags.each do |tag|
               .label.label-default
-                = tag.slug
+                = tag.name
     %br
       = link_to "New Comment", new_post_comment_path(@post), class: "btn btn-default"
     %br
