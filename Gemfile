@@ -23,9 +23,9 @@ gem 'select2-rails'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'rails_12factor', group: :production
+gem 'populator'
 
 group :development, :test do 
-  gem 'populator'
   gem 'spring'
 	gem 'rspec-rails'
   gem 'annotate'
