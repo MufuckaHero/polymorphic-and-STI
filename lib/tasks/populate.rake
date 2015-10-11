@@ -1,5 +1,3 @@
-require "populator"
-
 namespace :populate do
   desc "Create random tags"
   task tags: :environment do

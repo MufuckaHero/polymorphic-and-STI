@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
 
 gem 'rails', '4.1.8'
 gem 'sass-rails', '~> 4.0.3'
@@ -9,7 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',  group: :doc
 gem 'pg'
-gem 'puma'
+gem 'puma', group: :production
 gem 'bootstrap-sass'
 gem 'font-awesome-sass' 
 gem 'carrierwave'
@@ -24,9 +25,9 @@ gem 'bootstrap-kaminari-views'
 gem 'rails_12factor', group: :production
 
 group :development, :test do 
+  gem 'populator', :require => false
   gem 'spring'
 	gem 'rspec-rails'
-  gem 'populator'
   gem 'annotate'
 	gem 'database_cleaner'
 	gem 'factory_girl_rails'
