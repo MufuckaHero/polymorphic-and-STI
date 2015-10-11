@@ -15,11 +15,9 @@
               = link_to 'Edit', edit_post_path(@post), class: "btn btn-default"
               = link_to 'Destroy', post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
       .panel-footer
-        .row
-          .col-md-6
-            -@post_tags.each do |tag|
-              .label.label-default
-                = tag.name
+        -@post_tags.each do |tag|
+          .label.label-default
+            =tag.name
     %br
       = link_to "New Comment", new_post_comment_path(@post), class: "btn btn-default"
     %br
