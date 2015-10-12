@@ -10,20 +10,21 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',  group: :doc
 gem 'pg'
-gem 'puma', group: :production
+gem 'puma'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass' 
 gem 'carrierwave'
 gem 'carrierwave-aws'
 gem 'haml-rails'
 gem 'simple_form'
-gem 'slim'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'select2-rails'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'rails_12factor', group: :production
 gem 'populator'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do 
   gem 'spring'

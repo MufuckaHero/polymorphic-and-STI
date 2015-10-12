@@ -5,7 +5,7 @@
       = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
     %ul
       - @post.errors.full_messages.each do |msg|
-        %li= msg  
+        %li= msg 
   .form-group
     = f.simple_fields_for :picture do |p| 
       = p.input :data, label: "Picture"

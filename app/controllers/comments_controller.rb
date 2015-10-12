@@ -42,12 +42,7 @@ class CommentsController < ApplicationController
   
   private
   def find_target
-    klass =
-      if params[:post_id] || params[:video_id] 
-        params[:post_id] ? Post : Video
-      else
-        Event
-      end
+    klass = params[:post_id]  ? Post : Event
     par = (klass.to_s.downcase + "_id").to_sym
     @target = klass.find(params[par])
   end 

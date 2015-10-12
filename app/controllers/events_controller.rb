@@ -30,13 +30,14 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to @event, notice: "Successfully saved"
     else
+      @event.build_attachment
       render 'new'
     end
   end
 
   def update
     @event = Event.find(params[:id])
-    @event.tag_ids = params[:tag_ids]
+    @event.tag_ids = params[:tag_ids] if params[:tag_ids]
 
     if @event.update(event_params)
       redirect_to @event, notice: "Event was successfully updated"

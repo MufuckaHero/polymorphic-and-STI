@@ -9,6 +9,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])  
     @comments = @post.comments.all
     @post_tags = Tag.where(id: @post.tag_ids)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render template: "posts/show_pdf.html.erb",
+               pdf: "report",
+               layout: "pdf.html.erb"
+      end
+    end
   end
 
   def new
@@ -30,15 +38,16 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, notice: "Successfully saved"
     else
+      @post.build_picture
       render 'new'
     end
   end
 
   def update
     @post = Post.find(params[:id])
-    @post.tag_ids = params[:tag_ids] 
+    @post.tag_ids = params[:tag_ids] if params[:tag_ids]
 
-    if @post.update(post_params)
+    if @post.update(params)
       redirect_to @post, notice: "Post was successfully updated"
     else
       render 'edit'
