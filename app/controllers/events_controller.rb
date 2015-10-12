@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :tags_all, only: [:new, :edit]
 
   def index
-    @events = Event.order("created_at DESC").page params[:page]
+    @events = Event.all.page params[:page]
   end
 
   def show

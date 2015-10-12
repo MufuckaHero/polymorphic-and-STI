@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-    @posts = Post.all.last(2)
-    @events = Event.all.last(2)
+    @posts = Post.first(2)
+    @events = Event.first(2)
     
     @tags = Tag.all
     @articles = [] 

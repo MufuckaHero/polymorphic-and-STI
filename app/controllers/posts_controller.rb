@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :tags_all, only: [:new, :edit]
 
   def index
-    @posts = Post.order("created_at DESC").page params[:page]
+    @posts = Post.all.page params[:page]
   end
 
   def show
