@@ -1,1 +1,1 @@
-https://polymorphic-blog.herokuapp.com/
+https://polymorphic-blog.herokuapp.com
