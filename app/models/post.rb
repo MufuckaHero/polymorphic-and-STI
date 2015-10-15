@@ -1,7 +1,10 @@
 class Post < ActiveRecord::Base
   include Taggable
   include Models
+  include CustomFields
   
   has_one :picture, as: :assetable,  dependent: :destroy
   accepts_nested_attributes_for :picture
+
+  custom_fields :pfcolor
 end
