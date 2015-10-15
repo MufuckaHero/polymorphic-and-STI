@@ -1,12 +1,13 @@
 #posts.transitions-enabled
-  - @posts.each do |post| 
-    .box.panel.panel-default
-      - if post.picture
-        = link_to (image_tag post.picture.data_url), post
-      %h2= link_to post.title, post_path(post) 
-      .panel-footer
-        .row
-          = post.created_at.strftime("%B %d, %Y")
-  %br
+  - cache(cache_key_for_posts) do 
+    - @posts.each do |post| 
+      .box.panel.panel-default
+        - if post.picture
+          = link_to (image_tag post.picture.data_url), post
+        %h2= link_to post.title, post_path(post), class: "#{post.pfcolor}"
+        .panel-footer
+          .row
+            = post.created_at.strftime("%B %d, %Y")
+%br
 = paginate @posts, :theme => 'twitter-bootstrap',
-                   :pagination_class => "pager"
+                     :pagination_class => "pager"
