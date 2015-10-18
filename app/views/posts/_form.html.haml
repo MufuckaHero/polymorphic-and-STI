@@ -17,5 +17,5 @@
     = f.label :tags
     = select_tag(:tag_ids,options_from_collection_for_select(@tags || [], :id, :name, :slug), multiple: true, class: 'form-control')
   .form-group
-    = f.input :pfcolor, collection: ['s', 'm'],  multiple: true
+    = f.input :title_color, collection: ['blue', 'grey'],  multiple: true
   = f.button :submit, class: 'btn btn-default'

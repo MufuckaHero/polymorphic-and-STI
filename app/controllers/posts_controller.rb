@@ -47,7 +47,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.tag_ids = params[:tag_ids] if params[:tag_ids]
 
-    if @post.update(params)
+    if @post.update(post_params)
       redirect_to @post, notice: "Post was successfully updated"
     else
       render 'edit'
@@ -67,6 +67,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :pfcolor, :content, picture_attributes: [:data])
+    params.require(:post).permit(:title, :title_color, :content, picture_attributes: [:data])
   end
 end
