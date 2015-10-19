@@ -2,8 +2,8 @@
   .row
     .panel.panel-default
       .panel-heading
-        %h1 Editing event
+        %h1= t(:edit)
       .panel-body
         = render 'form' 
-      .span.glyphicon.glyphicon-arrow-left
-        = link_to "Back", :back
+        .span.glyphicon.glyphicon-arrow-left
+          = link_to t(:back), :back

@@ -8,11 +8,14 @@
 %body
   %nav.navbar.navbar-inverse
     .container
-      .navbar-brand= link_to "Home", root_path, data: {no_turbolink: true}
+      .navbar-brand= link_to t(:home), root_path, data: {no_turbolink: true}
       %ul.nav.navbar-nav.navbar-right
-        %li= link_to "Posts", posts_path
-        %li= link_to "Events", events_path
-        %li= link_to "Create Tag", new_tag_path
+        %li= link_to t(:posts), posts_path
+        %li= link_to t(:events), events_path
+        %li= link_to t(:create_tag), new_tag_path
+      %ul.nav.navbar-nav
+        %li= link_to_unless I18n.locale == :en, "English", locale: :en
+        %li= link_to_unless I18n.locale == :ru, "Русский", locale: :ru
   .container
     - flash.each do |name, msg|
       =content_tag :div, msg, class: 'alert alert-info'     

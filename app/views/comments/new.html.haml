@@ -2,7 +2,7 @@
   .row
     .panel.panel-default
       .panel-heading
-        %h1 New Comment
+        %h1= t(:new_comment)
       .panel-body
         = simple_form_for([@target, @comment]) do |f| 
           = if @comment.errors.any? 

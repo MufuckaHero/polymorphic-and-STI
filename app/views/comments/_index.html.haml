@@ -1,7 +1,7 @@
 .panel.panel-default
   .panel-heading
     .panel-footer
-      %h4 Comments:
+      %h4= t(:all_comments)
   .panel-body
     - @comments.each do |comment|
       .row
@@ -14,7 +14,7 @@
             = comment.content
         .col-md-6
           .btn-group.pull-right
-            = link_to "Show", comment_path(comment), class: "btn btn-default"
-            = link_to 'Edit', edit_comment_path(comment), class: "btn btn-default"
-            = link_to 'Destroy', [comment.target, comment] , method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"
+            = link_to t(:show), comment_path(comment), class: "btn btn-default"
+            = link_to t(:edit), edit_comment_path(comment), class: "btn btn-default"
+            = link_to t(:destroy), [comment.target, comment] , method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"
       %br    

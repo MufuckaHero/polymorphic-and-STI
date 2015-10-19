@@ -5,7 +5,7 @@
         %h2= link_to event.title, event_path(event) 
       .panel-footer
         .row
-          = event.created_at.strftime("%B %d, %Y")
+          = l event.created_at, format: :short
   %br
 = paginate @events, :theme => 'twitter-bootstrap',
                    :pagination_class => "pager"

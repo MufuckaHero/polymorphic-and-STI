@@ -20,4 +20,25 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  all_posts: "All Posts"
+  all_events: "All Events"
+  tags_cloud: "Tags Cloud"
+  new_post: "New Post"
+  new_event: "New Event"
+  new_comment: "New Comment"
+  all_comments: "Comments"
+  create_tag: "Create Tag"
+  home: "Home"
+  posts: "Posts"
+  events: "Events"
+  attachment: "Attachment"
+  show: "Show"
+  edit: "Edit"
+  destroy: "Destroy"
+  back: "Back"
+  picture: "Picture"
+  download_attachment: "Download Attachment"
+  belongs_to: "Belongs To:"
+  time:
+    formats:
+      short: "%B %d, %Y"

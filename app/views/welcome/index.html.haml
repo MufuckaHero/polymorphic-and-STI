@@ -1,6 +1,6 @@
 .col-md-3
-  %h1= link_to "All Posts", posts_path
-  %h3= link_to "New Post", new_post_path  
+  %h1= link_to t(:all_posts), posts_path
+  %h3= link_to t(:new_post), new_post_path  
 #posts.transitions-enabled
   .col-md-6
     - @posts.each do |post| 
@@ -10,13 +10,13 @@
         %h2= link_to post.title, post_path(post) 
         .panel-footer
           .row
-            = post.created_at.strftime("%B %d, %Y")
+            = l post.created_at, format: :short
     %br
 
 %br
 .col-md-3
-  %h1= link_to "All Events", events_path
-  %h3= link_to "New Event", new_event_path
+  %h1= link_to t(:all_events), events_path
+  %h3= link_to t(:new_event), new_event_path
 #events.transitions-enabled
   .col-md-6
     - @events.each do |event| 
@@ -24,11 +24,11 @@
         %h2= link_to event.title, event_path(event)
         .panel-footer
           .row
-            = event.created_at.strftime("%B %d, %Y")
+            = l event.created_at, format: :short
     %br
 
-%h1 Tags cloud
-%h3= link_to "Create Tag", new_tag_path
+%h1= t(:tags_cloud)
+%h3= link_to t(:create_tag), new_tag_path
 .row
   .col-md-6.col-md-offset-3
     #tag_cloud

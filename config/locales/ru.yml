@@ -1,0 +1,69 @@
+ru:
+  activerecord:
+    models:
+      post: 
+        one: Пост
+        other: Посты
+      event: 
+        one: Событие
+        other: События
+      comment: 
+        one: Комментарий
+        other: Комментарии
+      tag: 
+        one: Тэг
+        other: Тэги
+    attributes:
+      post:
+        title: "Заголовок"
+        content: "Сожержание"
+        tags: "Тэги"
+        title_color: "Цвет Заголовка"
+      tag:
+        name: "Заголовок"
+        slug: "Метка"
+      event:
+        title: "Заголовок"
+        address: "Адрес"
+        tags: "Тэги"
+      comment:
+        author_name: "Имя Автора"
+        author_email: "Адрес Электронной Почты"
+        content: "Содержание"
+  helpers:
+    submit:
+      create: "Создать %{model}"
+      update: "Обновить %{model}"
+  all_posts: "Все Посты"
+  all_events: "Все События"
+  tags_cloud: "Облако Тэгов"
+  new_post: "Новый Пост"
+  new_event: "Новое Событие"
+  new_comment: "Новый Комментарий"
+  all_comments: "Комментарии"
+  create_tag: "Создать Тэг"
+  home: "Главная"
+  posts: "Посты"
+  events: "События"
+  attachment: "Файл"
+  show: "Показать"
+  edit: "Добавить"
+  destroy: "Удалить"
+  back: "Назад"
+  picture: "Картинка"
+  download_attachment: "Загрузить Файл"
+  belongs_to: "Принадлежит:"
+  views:
+    pagination:
+      first: "&laquo; Первая"
+      last: "Последняя &raquo;"
+      previous: "&lsaquo; Предыдущая"
+      next: "Следующая &rsaquo;"
+      truncate: "..."
+  date:
+    formats:
+      short: "%B %d, %Y"
+    month_names: [~, Январь, Февраль, Март, Апрель, Маи, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
+  time:
+    formats:
+      short: "%B %d, %Y"
