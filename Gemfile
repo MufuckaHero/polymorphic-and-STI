@@ -20,7 +20,7 @@ gem 'masonry-rails', '~> 0.2.4'
 gem 'select2-rails'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 gem 'populator'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
