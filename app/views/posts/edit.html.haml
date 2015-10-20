@@ -2,7 +2,7 @@
   .row
     .panel.panel-default
       .panel-heading
-        %h1 Editing post
+        %h1= t(:edit)
       .panel-body
         = image_tag @post.picture.data_url if @post.picture
         = render 'form' 

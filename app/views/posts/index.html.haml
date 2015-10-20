@@ -1,6 +1,6 @@
 #posts.transitions-enabled
-  - cache(cache_key_for_posts) do 
-    - @posts.each do |post| 
+  - @posts.each do |post|  
+    - cache([post, locale: I18n.locale]) do
       .box.panel.panel-default
         - if post.picture
           = link_to (image_tag post.picture.data_url), post
@@ -10,4 +10,4 @@
             = l post.created_at, format: :short
 %br
 = paginate @posts, :theme => 'twitter-bootstrap',
-                     :pagination_class => "pager"
+                   :pagination_class => "pager"
